@@ -8,6 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello Silver</h1>
+	<h1>Silver at Home</h1>
+	<ul>
+		<li><a href="">Patient data</a></li>
+		<li>Health performance</li>
+	</ul>
 </body>
 </html>
