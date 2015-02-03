@@ -1,0 +1,9 @@
+import silver.home.common.PatientData;
+
+
+rule "Yellow alert"
+	when 
+	 	$patient : PatientData((patientWeight - perfectWeight)>1)
+	then
+		System.out.println("PATIENT DETAILS : ");
+end

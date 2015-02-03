@@ -5,9 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>JEE application service</name>
-  <properties>
-  	<droolsVersion>5.5.0.Final</droolsVersion>
-  </properties>
+  
   <dependencies>
  <!-- MySQL database driver -->
 	<dependency>
@@ -63,10 +61,17 @@
    </dependency>
 	
    <dependency>
-    <groupId>org.drools</groupId>
-    <artifactId>drools-compiler</artifactId>
-    <version>${droolsVersion}</version>
-  </dependency>
+        <groupId>org.drools</groupId>
+        <artifactId>drools-compiler</artifactId>
+        <version>5.4.0.Final</version>
+   </dependency>
   
+  <dependency>
+		<groupId>com.thoughtworks.xstream</groupId>
+		<artifactId>xstream</artifactId>
+		<version>1.3.1</version>
+  </dependency>
+	
+	
   </dependencies>
 </project>
