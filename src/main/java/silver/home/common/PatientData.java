@@ -11,6 +11,8 @@ public class PatientData implements Serializable{
 	private String date;
 	
 	
+	public PatientData() {
+	}
 	
 	
 	public PatientData(int id, double patientWeight, double perfectWeight,
@@ -84,9 +86,6 @@ public class PatientData implements Serializable{
 	}
 
 
-
-	public PatientData() {
-	}
 	
 	
 

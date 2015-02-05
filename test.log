@@ -1,0 +1,25 @@
+<object-stream>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Yellow alert [1]</activationId>
+  <rule>Yellow alert</rule>
+  <declarations>$patient=silver.home.common.PatientData@30dfb821(1)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>1</factId>
+  <objectToString>silver.home.common.PatientData@30dfb821</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Yellow alert [1]</activationId>
+  <rule>Yellow alert</rule>
+  <declarations>$patient=silver.home.common.PatientData@30dfb821(1)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Yellow alert [1]</activationId>
+  <rule>Yellow alert</rule>
+  <declarations>$patient=silver.home.common.PatientData@30dfb821(1)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+</object-stream>

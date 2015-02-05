@@ -1,9 +1,16 @@
 import silver.home.common.PatientData;
-
+import silver.home.common.Alert;
+import silver.home.common.SendEmail;
 
 rule "Yellow alert"
 	when 
 	 	$patient : PatientData((patientWeight - perfectWeight)>1)
 	then
-		System.out.println("PATIENT DETAILS : ");
+		System.out.println("YELLOW ALERT : ");
+		SendEmail $email=new SendEmail();
+		Alert $alert=new Alert();
+		$email.send("mountassir.brahim@gmail.com", "YELLOW ALERT","Patient"+$patient.getId()+" - "+$patient.getDate()+" : "+$alert.getYellowAlert());
+		//$email.send("patientAZnetwork@gmail.com", "","Veuillez contacter votre médecin");
 end
+
+

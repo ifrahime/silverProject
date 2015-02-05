@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="silver.home.common.PatientData" table="patientData" catalog="silverHome">
       <id name="id" type="int">
-            <column name="medical_id" length="11"/>
+            <column name="id" length="11"/>
         </id>
         <property name="patientWeight" type="double">
             <column name="weight" length="20" not-null="false" unique="false" />
