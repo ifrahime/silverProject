@@ -11,6 +11,9 @@
 <script src="js/displayData.js"></script>
 </head>
 <body>
+	<p>
+		<h1 style="text-align: center;">Silver platform</h1>
+	</p>
 	<!-- article inputs -->
 	<div class="article" style="margin:10px;">
 		<div class="input-prepend">
@@ -39,6 +42,7 @@
 		</div>
 		<p>
 			<button class="btn btn-primary" type="button" onclick="sendAjax()">Add</button>
+			<button class="btn btn-info" type="button" onclick="retriveData()">patientDetails</button>
 		</p>
 	</div>
 	
@@ -55,6 +59,7 @@
 				<th>Weight reference</th>
 				<th>Tension</th>
 				<th>Date of mesure</th>
+				<th>ALert</th>
 			</tr>
 		</table>
 	</div>

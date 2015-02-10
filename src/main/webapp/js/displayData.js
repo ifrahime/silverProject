@@ -37,3 +37,8 @@ function sendAjax() {
 		}
 	});
 }
+
+
+function retrieveData(){
+	
+}

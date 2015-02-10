@@ -2,15 +2,44 @@ import silver.home.common.PatientData;
 import silver.home.common.Alert;
 import silver.home.common.SendEmail;
 
+
+
 rule "Yellow alert"
 	when 
-	 	$patient : PatientData((patientWeight - perfectWeight)>1)
+	 	$patient : PatientData((patientWeight - perfectWeight>1) && (patientWeight - perfectWeight<=2))
 	then
 		System.out.println("YELLOW ALERT : ");
 		SendEmail $email=new SendEmail();
 		Alert $alert=new Alert();
-		$email.send("mountassir.brahim@gmail.com", "YELLOW ALERT","Patient"+$patient.getId()+" - "+$patient.getDate()+" : "+$alert.getYellowAlert());
+		$patient.setTypeAlert("YELLOW ALERT");
+		$email.send("mountassir.brahim@gmail.com", $patient.getTypeAlert(),"Patient"+$patient.getId()+" - "+$patient.getDate()+" : "+$alert.getYellowAlert());
 		//$email.send("patientAZnetwork@gmail.com", "","Veuillez contacter votre médecin");
 end
+
+
+rule "Orange alert"
+	when 
+	 	$patient : PatientData((patientWeight - perfectWeight)>2 && (patientWeight - perfectWeight)<=4)
+	then
+		SendEmail $email=new SendEmail();
+		Alert $alert=new Alert();
+		$patient.setTypeAlert("ORANGE ALERT");
+		$email.send("mountassir.brahim@gmail.com", $patient.getTypeAlert(),"Patient"+$patient.getId()+" - "+$patient.getDate()+" : "+$alert.getOrangeAlert());
+		//$email.send("patientAZnetwork@gmail.com", "","Consulter votre médecin dans les 24H qui suivent");
+end
+
+
+
+rule "Red alert"
+	when 
+	 	$patient : PatientData(patientWeight - perfectWeight >4)
+	then
+		SendEmail $email=new SendEmail();
+		Alert $alert=new Alert();
+		$patient.setTypeAlert("RED ALERT");
+		$email.send("mountassir.brahim@gmail.com", $patient.getTypeAlert(),"Patient"+$patient.getId()+" - "+$patient.getDate()+": "+$alert.getOrangeAlert());
+		//$email.send("patientAZnetwork@gmail.com", "","Il faut que vous consultiez rapidement votre médecin");
+end
+
 
 

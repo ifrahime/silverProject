@@ -4,36 +4,50 @@ import java.io.Serializable;
 
 public class PatientData implements Serializable{
 	
-	private int id;
+	private String id;
 	private double patientWeight;
 	private double perfectWeight;
 	private double patientTension;
 	private String date;
+	private String typeAlert;
 	
 	
+
+
+
+
+
 	public PatientData() {
 	}
 	
 	
-	public PatientData(int id, double patientWeight, double perfectWeight,
-			double patientTension, String date) {
+	
+
+
+
+	public PatientData(String id, double patientWeight, double perfectWeight,
+			double patientTension, String date, String typeAlert) {
 		super();
 		this.id = id;
 		this.patientWeight = patientWeight;
 		this.perfectWeight = perfectWeight;
 		this.patientTension = patientTension;
 		this.date = date;
+		this.typeAlert = typeAlert;
 	}
 
 
 
-	public int getId() {
+
+
+
+	public String getId() {
 		return id;
 	}
 
 
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -86,6 +100,27 @@ public class PatientData implements Serializable{
 	}
 
 
+
+
+
+
+	public String getTypeAlert() {
+		return typeAlert;
+	}
+
+
+
+
+
+
+	public void setTypeAlert(String typeAlert) {
+		this.typeAlert = typeAlert;
+	}
+
+
+	
+	
+	
 	
 	
 

@@ -25,7 +25,7 @@ public class App {
         session.beginTransaction();
         
         PatientData pData=new PatientData();
-        pData.setId(2);;
+        pData.setId("ddd4");;
         pData.setPatientWeight(75);
         pData.setPerfectWeight(70);
         pData.setPatientTension(120);

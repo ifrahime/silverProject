@@ -3,9 +3,9 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
  
 <hibernate-mapping>
-    <class name="silver.home.common.PatientData" table="patientData" catalog="silverHome">
-      <id name="id" type="int">
-            <column name="id" length="11"/>
+    <class name="silver.home.common.PatientData" table="patientData" catalog="silverDB">
+     	<id name="id" type="string">
+            <column name="id" length="45"/>
         </id>
         <property name="patientWeight" type="double">
             <column name="weight" length="20" not-null="false" unique="false" />
@@ -18,6 +18,9 @@
         </property>
         <property name="date" type="string">
             <column name="dateOfMesure" length="10" not-null="false" unique="false" />
+        </property>
+        <property name="typeAlert" type="string">
+            <column name="alertType" length="45" not-null="false" unique="false" />
         </property>
     </class>
 </hibernate-mapping>
