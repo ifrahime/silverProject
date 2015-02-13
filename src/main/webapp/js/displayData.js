@@ -18,6 +18,7 @@ function sendAjax() {
 		
 		success: function (data) {
         	$("tr:has(td)").remove();
+        	console.log(data);
         },
 		error:function(data,status,er) {
 			alert("error: "+data+" status: "+status+" er:"+er);
