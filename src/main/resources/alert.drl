@@ -6,7 +6,7 @@ import silver.home.common.SendEmail;
 
 rule "Yellow alert"
 	when 
-	 	$patient : PatientData((patientWeight - perfectWeight>1) && (patientWeight - perfectWeight<=2))
+	 	$patient : PatientData((patientWeight - perfectWeight>=1) && (patientWeight - perfectWeight<2))
 	then
 		System.out.println("YELLOW ALERT : ");
 		SendEmail $email=new SendEmail();
@@ -19,7 +19,7 @@ end
 
 rule "Orange alert"
 	when 
-	 	$patient : PatientData((patientWeight - perfectWeight)>2 && (patientWeight - perfectWeight)<=4)
+	 	$patient : PatientData((patientWeight - perfectWeight)>=2 && (patientWeight - perfectWeight)<4)
 	then
 		SendEmail $email=new SendEmail();
 		Alert $alert=new Alert();
@@ -32,7 +32,7 @@ end
 
 rule "Red alert"
 	when 
-	 	$patient : PatientData(patientWeight - perfectWeight >4)
+	 	$patient : PatientData(patientWeight - perfectWeight >=4)
 	then
 		SendEmail $email=new SendEmail();
 		Alert $alert=new Alert();

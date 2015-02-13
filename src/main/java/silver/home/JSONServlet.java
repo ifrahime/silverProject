@@ -3,6 +3,7 @@ package silver.home;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,6 +23,7 @@ import org.drools.io.ResourceFactory;
 import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import silver.home.common.PatientData;
@@ -31,7 +33,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JSONServlet extends HttpServlet{
 
-	// This will store all received articles
+	// This will store all received data
     List<PatientData> data = new LinkedList<PatientData>();
  
     /***************************************************
@@ -40,7 +42,7 @@ public class JSONServlet extends HttpServlet{
      ****************************************************/
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
- 
+    	
         // 1. get received JSON data from request
         BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
         String json = "";
@@ -60,7 +62,8 @@ public class JSONServlet extends HttpServlet{
         System.out.println("Maven + Hibernate + MySQL + Drools");
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();        
-        session.save(pData);
+        
+        
         
         try {
 			KnowledgeBase kbase = readKnowledgeBase();
@@ -69,21 +72,44 @@ public class JSONServlet extends HttpServlet{
 	        ksession.insert(pData);
         	ksession.fireAllRules();
         	logger.close();
+        	session.save(pData);
         	session.getTransaction().commit();
         	session.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
         
-        
+       
         // 5. Add data to List<patientData>
         data.add(pData);
         
         // 6. Send List<data> as JSON to client
         mapper.writeValue(response.getOutputStream(), data);
     }
+   
     
-    private static KnowledgeBase readKnowledgeBase() throws Exception {
+    @Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {          
+    	// This will store all received articles
+         List<PatientData> dataReceived = new LinkedList<PatientData>();
+    	 Session session = HibernateUtil.getSessionFactory().openSession();
+         session.beginTransaction();     
+         Query q=session.createQuery("FROM PatientData");
+         List listOfPatientData=q.list();
+         Iterator rs=listOfPatientData.iterator();
+         while(rs.hasNext()){
+        	dataReceived.add((PatientData)rs.next());
+         }
+         // 2. initiate jackson mapper
+         ObjectMapper mapper = new ObjectMapper();
+         mapper.writeValue(resp.getOutputStream(), dataReceived);
+         session.getTransaction().commit();
+         session.close();	  
+	}
+
+
+	private static KnowledgeBase readKnowledgeBase() throws Exception {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();
         kbuilder.add(ResourceFactory.newClassPathResource("alert.drl"), ResourceType.DRL);
         KnowledgeBuilderErrors errors = kbuilder.getErrors();
