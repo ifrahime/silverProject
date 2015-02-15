@@ -1,5 +1,5 @@
 $(function() {
-    var patientData = {id : "", patientWeight : "", perfectWeight : "", patientTension : "", date : "", typeAlert : "" };
+    var patientData = {id : "", patientName : "", patientWeight : "", perfectWeight : "", patientTension : "", date : "", typeAlert : "" };
     var chart=Morris.Line({
           // ID of the element in which to draw the chart.
           element: 'myCharts',
@@ -30,6 +30,7 @@ $(function() {
           console.log("Data received : "+data);
         })
         .fail(function() {
+          console.log("Data received : "+data);
           // If there is no communication between the server, show an error
           alert( "error occured" );
         });

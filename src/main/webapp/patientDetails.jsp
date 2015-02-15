@@ -87,9 +87,15 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                 	<form role="form">
-									     <div class="form-group input-group">
+									     <!--<div class="form-group input-group">
 												<span class="input-group-addon">ID</span>
 												<input class="form-control" id="id" name="id" type="text" placeholder="patient medical_id...">
+											</div>
+											-->
+											<br/>
+											<div class="form-group input-group">
+												<span class="input-group-addon">NAME</span>
+												<input class="form-control" id="name" name="name" type="text" placeholder="Name of patient..">
 											</div>
 											<br/>
 											<div class="form-group input-group">
@@ -122,6 +128,7 @@
                                     <table id="added-patientData" class="table table-striped table-bordered table-hover">
 										<tr>
 											<th>Id</th>
+											<th>Name</th>
 											<th>Weight</th>
 											<th>Weight reference</th>
 											<th>Tension</th>

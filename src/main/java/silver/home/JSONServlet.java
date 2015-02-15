@@ -52,23 +52,6 @@ public class JSONServlet extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
     	
-    	/**
-    	 * GET data from Raspberry
-    	 */
-    /*	
-       ObjectInputStream in = new ObjectInputStream(request.getInputStream());
- 	   PatientData personReceived=null;
-    	try {
-    	   personReceived = (PatientData) in.readObject();
-    	} catch (ClassNotFoundException e) {
-    	    e.printStackTrace();
-    	}
-    	System.out.println("Before printing data");
-    	System.out.println("PERSON RECEIVED : "+personReceived);
-    	in.close();
-     */
-    	
-    	
         // 1. get received JSON data from request
         BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
         String json = "";
@@ -125,7 +108,10 @@ public class JSONServlet extends HttpServlet{
          List listOfPatientData=q.list();
          Iterator rs=listOfPatientData.iterator();
          while(rs.hasNext()){
-        	dataReceived.add((PatientData)rs.next());
+        	System.out.println("Length of listOfPatientData is : "+listOfPatientData.size());
+        	PatientData pTemp=(PatientData)rs.next(); 
+        	System.out.println("Data received : "+pTemp.getPatientTension());
+        	dataReceived.add(pTemp);
          }
          // 2. initiate jackson mapper
          ObjectMapper mapper = new ObjectMapper();
@@ -134,6 +120,7 @@ public class JSONServlet extends HttpServlet{
          session.close();	  
 	}
 
+/*
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response crunchifyREST(InputStream incomingData) {
@@ -152,6 +139,7 @@ public class JSONServlet extends HttpServlet{
         // return HTTP response 200 in case of success
         return Response.status(200).entity(crunchifyBuilder.toString()).build();
     }
+ */
     
 	private static KnowledgeBase readKnowledgeBase() throws Exception {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();

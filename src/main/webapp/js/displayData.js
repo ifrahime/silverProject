@@ -2,7 +2,8 @@ function sendAjax() {
  
 	// get inputs
 	var patientData = new Object();
-	patientData.id = $('#id').val();
+	//patientData.id = $('#id').val();
+	patientData.patientName = $('#name').val();
 	patientData.patientWeight = $('#weight').val();
 	patientData.perfectWeight = $('#weightReference').val();
 	patientData.patientTension= $('#patientTension').val();
@@ -28,25 +29,26 @@ function sendAjax() {
 
 
 function retrieveData(){
-	var patientData = {id : "", patientWeight : "", perfectWeight : "", patientTension : "", date : "", typeAlert : "" };
+	var patientObject = {id : "", patientName : "", patientWeight : "", perfectWeight : "", patientTension : "", date : "", typeAlert : "" };
 	$.ajax({
 		url: "jsonservlet",
 		type: 'GET',
 		dataType: 'json',
-		data: JSON.stringify(patientData),
+		data: JSON.stringify(patientObject),
 		contentType: 'application/json',
 		mimeType: 'application/json',
 		
 		success: function (data) {
         	$("tr:has(td)").remove();
-        	$.each(data, function (index, patientData) {
+        	$.each(data, function (index, patientObject) {
                 $("#added-patientData").append($('<tr/>')
-                		.append($('<td/>').html(patientData.id))
-                		.append($('<td/>').html(patientData.patientWeight))
-                		.append($('<td/>').html(patientData.perfectWeight))
-                		.append($('<td/>').html(patientData.patientTension))
-                		.append($('<td/>').html(patientData.date))
-                		.append($('<td/>').html(patientData.typeAlert))
+                		.append($('<td/>').html(patientObject.id))
+                		.append($('<td/>').html(patientObject.patientName))
+                		.append($('<td/>').html(patientObject.patientWeight))
+                		.append($('<td/>').html(patientObject.perfectWeight))
+                		.append($('<td/>').html(patientObject.patientTension))
+                		.append($('<td/>').html(patientObject.date))
+                		.append($('<td/>').html(patientObject.typeAlert))
                 );  
             }); 
         },
@@ -56,4 +58,8 @@ function retrieveData(){
 		}
 	});
 }
+
+
+
+
 

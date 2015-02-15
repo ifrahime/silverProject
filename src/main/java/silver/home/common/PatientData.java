@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public class PatientData implements Serializable{
 	
-	private String id;
+	private int id;
 	private double patientWeight;
 	private double perfectWeight;
 	private double patientTension;
 	private String date;
 	private String typeAlert;
-	
+	private String patientName;
 	
 
 
@@ -25,10 +25,11 @@ public class PatientData implements Serializable{
 
 
 
-	public PatientData(String id, double patientWeight, double perfectWeight,
+	public PatientData(int id, String name, double patientWeight, double perfectWeight,
 			double patientTension, String date, String typeAlert) {
 		super();
 		this.id = id;
+		this.patientName=name;
 		this.patientWeight = patientWeight;
 		this.perfectWeight = perfectWeight;
 		this.patientTension = patientTension;
@@ -41,13 +42,13 @@ public class PatientData implements Serializable{
 
 
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
 
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -115,6 +116,24 @@ public class PatientData implements Serializable{
 
 	public void setTypeAlert(String typeAlert) {
 		this.typeAlert = typeAlert;
+	}
+
+
+
+
+
+
+	public String getPatientName() {
+		return patientName;
+	}
+
+
+
+
+
+
+	public void setPatientName(String patientName) {
+		this.patientName = patientName;
 	}
 
 
