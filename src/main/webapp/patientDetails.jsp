@@ -117,8 +117,8 @@
 												<input class="form-control" id="dateOfMesure" name="dateOfMesure" type="text" placeholder="Date of taking the mesure...">
 											</div>
 											<p>
-												<button class="btn btn-primary" type="button" onclick="sendAjax()">Add</button>
-												<button class="btn btn-info" type="button" onclick="retrieveData()">patientData</button>
+												<button class="btn btn-primary btn-xs" type="button" onclick="sendAjax()">Add</button>
+												<button class="btn btn-info btn-xs" type="button" onclick="retrieveData()">patientData</button>
 											</p>   
                                 	</form>
 	                        </div>

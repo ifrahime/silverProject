@@ -87,12 +87,14 @@
 	                        </div>
 	                        <!-- /.panel-heading -->
 	                        <div class="panel-body">
-	                            <div class="input-group">
-						      		<input type="text" id="patientID" name="patientID" class="form-control" placeholder="Search for patient that have this ID"> 
-						    	</div><!-- /input-group -->
-						    	<br/>
-							    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="getPatient(document.getElementById('patientID').value)">Search</button>
-								<button type="button" class="btn btn-default btn-lg btn-block" onclick="drawChart(document.getElementById('patientID').value)">Chart</button>
+		                        <form class="form-inline">
+								  <div class="form-group">
+								    <label for="patientID">ID</label>
+								    <input type="text" id="patientID" name="patientID" class="form-control" placeholder="Search for this ID"> 
+								  </div>
+								  <button type="button" class="btn btn-primary btn-xs" onclick="getPatient(document.getElementById('patientID').value)">Search</button>
+								  <button type="button" class="btn btn-default btn-xs" onclick="drawChart(document.getElementById('patientID').value)">Chart</button>
+								 </form>
 							    <br/>
 	                           	<div class="table-responsive">
 	                                    <table id="search-patientData" class="table table-striped table-bordered table-hover">
