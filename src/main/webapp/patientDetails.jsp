@@ -72,31 +72,25 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Forms - tables</h1>
+                    <h1 class="page-header">Patient details - edit data</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            patient - Data
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                	<form role="form">
-									     <!--<div class="form-group input-group">
+	             <div class="col-lg-12">
+	                    <div class="panel panel-default">
+	                        <div class="panel-heading">
+	                           Form
+	                        </div>
+	                        <!-- /.panel-heading -->
+	                        <div class="panel-body">
+	                           	<form role="form">
+									     <div class="form-group input-group">
 												<span class="input-group-addon">ID</span>
 												<input class="form-control" id="id" name="id" type="text" placeholder="patient medical_id...">
 											</div>
-											-->
-											<br/>
-											<div class="form-group input-group">
-												<span class="input-group-addon">NAME</span>
-												<input class="form-control" id="name" name="name" type="text" placeholder="Name of patient..">
-											</div>
+										
 											<br/>
 											<div class="form-group input-group">
 												<span class="input-group-addon">WEIGHT</span>
@@ -109,8 +103,13 @@
 											</div>
 											<br/>
 											<div class="form-group input-group">
-												<span class="input-group-addon">TENSION</span>
-												<input class="form-control" id="patientTension" name="patientTension" type="text" placeholder="Tension of patient...">
+												<span class="input-group-addon">systolic Pressure</span>
+												<input class="form-control" id="systolicPressure" name="systolicPressure" type="text" placeholder="Tension of patient...">
+											</div>
+											<br/>
+											<div class="form-group input-group">
+												<span class="input-group-addon">diastolic Pressure</span>
+												<input class="form-control" id="diastolicPressure" name="diastolicPressure" type="text" placeholder="Tension of patient...">
 											</div>
 											<br/>
 											<div class="form-group input-group">
@@ -122,29 +121,43 @@
 												<button class="btn btn-info" type="button" onclick="retrieveData()">patientData</button>
 											</p>   
                                 	</form>
-                                </div>
-                                 <div class="col-lg-6">
-                                  <div class="table-responsive">
+	                        </div>
+	                        <!-- /.panel-body -->
+	                    </div>
+	                    <!-- /.panel -->
+	                </div>
+	                <!-- /.col-lg-12 -->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            weight chart
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                          <div class="table-responsive">
                                     <table id="added-patientData" class="table table-striped table-bordered table-hover">
 										<tr>
+											<th>N</th>
 											<th>Id</th>
-											<th>Name</th>
 											<th>Weight</th>
 											<th>Weight reference</th>
-											<th>Tension</th>
+											<th>systolicPressure</th>
+											<th>diastolicPressure</th>
 											<th>Date of mesure</th>
 											<th>Alert</th>
 										</tr>
 								   </table>
 								  </div>
-                                </div>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
-                            </div>
-                         </div>
-                     </div>
-                  </div>
-                 </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        
       </div>
 	
 	

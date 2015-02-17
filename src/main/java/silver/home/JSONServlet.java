@@ -36,6 +36,7 @@ import silver.home.common.PatientData;
 import silver.home.persistence.HibernateUtil;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 
@@ -103,14 +104,23 @@ public class JSONServlet extends HttpServlet{
       	// This will store all received articles
          List<PatientData> dataReceived = new LinkedList<PatientData>();
     	 Session session = HibernateUtil.getSessionFactory().openSession();
-         session.beginTransaction();     
-         Query q=session.createQuery("FROM PatientData");
+         session.beginTransaction();  
+         String id=req.getParameter("patientID");
+         System.out.println("Parameter : "+id);
+         Query q=null;
+         if(id!=null)
+         {
+        	 q=session.createQuery("FROM PatientData WHERE patientID = '"+id+"'"); 
+         }else
+         {
+        	 q=session.createQuery("FROM PatientData");
+         }
          List listOfPatientData=q.list();
          Iterator rs=listOfPatientData.iterator();
          while(rs.hasNext()){
         	System.out.println("Length of listOfPatientData is : "+listOfPatientData.size());
         	PatientData pTemp=(PatientData)rs.next(); 
-        	System.out.println("Data received : "+pTemp.getPatientTension());
+        	System.out.println("Data received : "+pTemp.getDate());
         	dataReceived.add(pTemp);
          }
          // 2. initiate jackson mapper
@@ -120,7 +130,7 @@ public class JSONServlet extends HttpServlet{
          session.close();	  
 	}
 
-/*
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response crunchifyREST(InputStream incomingData) {
@@ -139,7 +149,7 @@ public class JSONServlet extends HttpServlet{
         // return HTTP response 200 in case of success
         return Response.status(200).entity(crunchifyBuilder.toString()).build();
     }
- */
+
     
 	private static KnowledgeBase readKnowledgeBase() throws Exception {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();

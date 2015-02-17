@@ -4,23 +4,26 @@
  
 <hibernate-mapping>
     <class name="silver.home.common.PatientData" table="patientData" catalog="silverDB">
-     	<id name="id" type="int">
-            <column name="id" length="11"/>
+     	<id name="patientNumber" type="int">
+            <column name="numberOfPatient" length="11"/>
         </id>
-        <property name="patientName" type="string">
-            <column name="name" length="45" not-null="true"/>
+     	<property name="patientID" type="int">
+            <column name="patientID" length="11" not-null="true"/>
         </property>
         <property name="patientWeight" type="double">
-            <column name="weight" length="20" not-null="false" unique="false" />
+            <column name="weight" length="20" not-null="true" unique="false" />
         </property>
         <property name="perfectWeight" type="double">
-            <column name="weightReference" not-null="false" unique="false" />
+            <column name="weightReference" not-null="true" unique="false" />
         </property>
-        <property name="patientTension" type="double">
-            <column name="tension" not-null="false" unique="false" />
+        <property name="systolicPressure" type="double">
+            <column name="systolicPressure" not-null="true" unique="false" />
         </property>
-        <property name="date" type="string">
-            <column name="dateOfMesure" length="10" not-null="false" unique="false" />
+        <property name="diastolicPressure" type="double">
+            <column name="diastolicPressure" not-null="true" unique="false" />
+        </property>
+        <property name="date" type="date">
+            <column name="dateOfMesure" not-null="true" unique="false" />
         </property>
         <property name="typeAlert" type="string">
             <column name="alertType" length="45" not-null="false" unique="false" />

@@ -1,5 +1,6 @@
-$(function() {
-    var patientData = {id : "", patientName : "", patientWeight : "", perfectWeight : "", patientTension : "", date : "", typeAlert : "" };
+function drawChart(id) {
+	$("#myCharts").html("");
+	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "", date : "", typeAlert : "" };
     var chart=Morris.Line({
           // ID of the element in which to draw the chart.
           element: 'myCharts',
@@ -7,7 +8,7 @@ $(function() {
           // the chart.
          
           // The name of the data record attribute that contains x-values.
-          xkey: 'date',
+          xkey: ['date'],
           // A list of names of data record attributes that contain y-values.
           ykeys: ['patientWeight'],
           // Labels for the ykeys -- will be displayed when you hover over the
@@ -20,19 +21,18 @@ $(function() {
             url: "jsonservlet",
             type: 'GET',
             dataType: 'json',
-            data: JSON.stringify(patientData),
+            data: {"patientID" : id},
             contentType: 'application/json',
             mimeType: 'application/json',
         })
         .done(function( data ) {
           // When the response to the AJAX request comes back render the chart with new data
-          chart.setData(data);
-          console.log("Data received : "+data);
+        	  chart.setData(data);
+        	  console.log("Id patient : "+data.id);
         })
         .fail(function() {
-          console.log("Data received : "+data);
           // If there is no communication between the server, show an error
           alert( "error occured" );
         });
 
-});
+};

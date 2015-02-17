@@ -1,17 +1,19 @@
 package silver.home.common;
 
 import java.io.Serializable;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class PatientData implements Serializable{
 	
-	private int id;
+	private int patientNumber;
+	private int patientID;
 	private double patientWeight;
 	private double perfectWeight;
-	private double patientTension;
-	private String date;
+	private double systolicPressure;
+	private double diastolicPressure;
+	private Date date;
 	private String typeAlert;
-	private String patientName;
-	
 
 
 
@@ -20,19 +22,17 @@ public class PatientData implements Serializable{
 	public PatientData() {
 	}
 	
-	
-	
 
-
-
-	public PatientData(int id, String name, double patientWeight, double perfectWeight,
-			double patientTension, String date, String typeAlert) {
+	public PatientData(int patientNumber, int patientID, double patientWeight,
+			double perfectWeight, double systolicPressure,
+			double diastolicPressure, Date date, String typeAlert) {
 		super();
-		this.id = id;
-		this.patientName=name;
+		this.patientNumber = patientNumber;
+		this.patientID = patientID;
 		this.patientWeight = patientWeight;
 		this.perfectWeight = perfectWeight;
-		this.patientTension = patientTension;
+		this.systolicPressure = systolicPressure;
+		this.diastolicPressure = diastolicPressure;
 		this.date = date;
 		this.typeAlert = typeAlert;
 	}
@@ -42,15 +42,42 @@ public class PatientData implements Serializable{
 
 
 
-	public int getId() {
-		return id;
+
+
+	public int getPatientNumber() {
+		return patientNumber;
 	}
 
 
 
-	public void setId(int id) {
-		this.id = id;
+
+	public void setPatientNumber(int patientNumber) {
+		this.patientNumber = patientNumber;
 	}
+
+
+
+
+
+
+
+
+
+	public int getPatientID() {
+		return patientID;
+	}
+
+
+
+
+
+
+	public void setPatientID(int patientID) {
+		this.patientID = patientID;
+	}
+
+
+
 
 
 
@@ -78,25 +105,16 @@ public class PatientData implements Serializable{
 
 
 
-	public double getPatientTension() {
-		return patientTension;
-	}
-
-
-
-	public void setPatientTension(double patientTension) {
-		this.patientTension = patientTension;
-	}
-
-
-
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
 
 
-	public void setDate(String date) {
+
+
+
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
@@ -119,28 +137,27 @@ public class PatientData implements Serializable{
 	}
 
 
-
-
-
-
-	public String getPatientName() {
-		return patientName;
+	public double getSystolicPressure() {
+		return systolicPressure;
 	}
 
 
 
-
-
-
-	public void setPatientName(String patientName) {
-		this.patientName = patientName;
+	public void setSystolicPressure(double systolicPressure) {
+		this.systolicPressure = systolicPressure;
 	}
 
 
-	
-	
-	
-	
+
+	public double getDiastolicPressure() {
+		return diastolicPressure;
+	}
+
+
+
+	public void setDiastolicPressure(double diastolicPressure) {
+		this.diastolicPressure = diastolicPressure;
+	}
 	
 
 }

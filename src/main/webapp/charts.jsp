@@ -69,24 +69,75 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        <div id="page-wrapper">
+        
+        
+         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Weight chart</h1>
-                    <div class="panel panel-default">
-                    	<div class="panel-heading">
-                            chart of patient weight
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div id="myCharts"></div>
-                        </div>
-                    </div>
+                    <h1 class="page-header">Patient information</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-      </div>
-	
+            <!-- /.row -->
+            <div class="row">
+	             <div class="col-lg-12">
+	                    <div class="panel panel-default">
+	                        <div class="panel-heading">
+	                            Select patient data
+	                        </div>
+	                        <!-- /.panel-heading -->
+	                        <div class="panel-body">
+	                            <div class="input-group">
+						      		<input type="text" id="patientID" name="patientID" class="form-control" placeholder="Search for patient that have this ID"> 
+						    	</div><!-- /input-group -->
+						    	<br/>
+							    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="getPatient(document.getElementById('patientID').value)">Search</button>
+								<button type="button" class="btn btn-default btn-lg btn-block" onclick="drawChart(document.getElementById('patientID').value)">Chart</button>
+							    <br/>
+	                           	<div class="table-responsive">
+	                                    <table id="search-patientData" class="table table-striped table-bordered table-hover">
+											<tr>
+												<th>N°</th>
+												<th>Id</th>
+												<th>Weight</th>
+												<th>Weight reference</th>
+												<th>systolicPressure</th>
+												<th>diastolicPressure</th>
+												<th>Date of mesure</th>
+												<th>Alert</th>
+											</tr>
+									   </table>
+								</div>
+	                        </div>
+	                        <!-- /.panel-body -->
+	                    </div>
+	                    <!-- /.panel -->
+	                </div>
+	                <!-- /.col-lg-12 -->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            weight chart
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                           <div class="flot-chart">
+                                <div id="myCharts"></div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    
+       
 	</div>
 	 <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>

@@ -1,12 +1,13 @@
+
 function sendAjax() {
- 
 	// get inputs
 	var patientData = new Object();
-	//patientData.id = $('#id').val();
+	patientData.patientID = $('#id').val();
 	patientData.patientName = $('#name').val();
 	patientData.patientWeight = $('#weight').val();
 	patientData.perfectWeight = $('#weightReference').val();
-	patientData.patientTension= $('#patientTension').val();
+	patientData.systolicPressure= $('#systolicPressure').val();
+	patientData.diastolicPressure= $('#diastolicPressure').val();
 	patientData.date = $('#dateOfMesure').val();
 	
 	$.ajax({
@@ -29,7 +30,7 @@ function sendAjax() {
 
 
 function retrieveData(){
-	var patientObject = {id : "", patientName : "", patientWeight : "", perfectWeight : "", patientTension : "", date : "", typeAlert : "" };
+	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "", date : "", typeAlert : "" };
 	$.ajax({
 		url: "jsonservlet",
 		type: 'GET',
@@ -42,11 +43,12 @@ function retrieveData(){
         	$("tr:has(td)").remove();
         	$.each(data, function (index, patientObject) {
                 $("#added-patientData").append($('<tr/>')
-                		.append($('<td/>').html(patientObject.id))
-                		.append($('<td/>').html(patientObject.patientName))
+                		.append($('<td/>').html(patientObject.patientNumber))
+                		.append($('<td/>').html(patientObject.patientID))
                 		.append($('<td/>').html(patientObject.patientWeight))
                 		.append($('<td/>').html(patientObject.perfectWeight))
-                		.append($('<td/>').html(patientObject.patientTension))
+                		.append($('<td/>').html(patientObject.systolicPressure))
+                		.append($('<td/>').html(patientObject.diastolicPressure))
                 		.append($('<td/>').html(patientObject.date))
                 		.append($('<td/>').html(patientObject.typeAlert))
                 );  
@@ -60,6 +62,39 @@ function retrieveData(){
 }
 
 
-
+function getPatient(id)
+{
+	console.log("Name to search --> "+id);
+	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "", date : "", typeAlert : "" };
+	$.ajax({
+		url: "jsonservlet",
+		type: 'GET',
+		dataType: 'json',
+		data: {"patientID" : id},
+		contentType: 'application/json',
+		mimeType: 'application/json',
+		
+		success: function (data) {
+			console.log(data);
+        	$("tr:has(td)").remove();
+        	$.each(data, function (index, patientObject) {
+                $("#search-patientData").append($('<tr/>')
+                		.append($('<td/>').html(patientObject.patientNumber))
+                		.append($('<td/>').html(patientObject.patientID))
+                		.append($('<td/>').html(patientObject.patientWeight))
+                		.append($('<td/>').html(patientObject.perfectWeight))
+                		.append($('<td/>').html(patientObject.systolicPressure))
+                		.append($('<td/>').html(patientObject.diastolicPressure))
+                		.append($('<td/>').html(patientObject.date))
+                		.append($('<td/>').html(patientObject.typeAlert))
+                );  
+            }); 
+        },
+        
+		error:function(data,status,er) {
+			alert("error: "+data+" status: "+status+" er:"+er);
+		}
+	});
+}
 
 
