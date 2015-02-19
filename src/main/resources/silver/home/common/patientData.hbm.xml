@@ -4,9 +4,9 @@
  
 <hibernate-mapping>
     <class name="silver.home.common.PatientData" table="patientData" catalog="silverDB">
-     	<id name="patientNumber" type="int">
+     	 <id name="patientNumber" type="int">
             <column name="numberOfPatient" length="11"/>
-        </id>
+         </id>
      	<property name="patientID" type="int">
             <column name="patientID" length="11" not-null="true"/>
         </property>
@@ -22,7 +22,7 @@
         <property name="diastolicPressure" type="double">
             <column name="diastolicPressure" not-null="true" unique="false" />
         </property>
-        <property name="date" type="date">
+         <property name="date" type="date">
             <column name="dateOfMesure" not-null="true" unique="false" />
         </property>
         <property name="typeAlert" type="string">

@@ -10,12 +10,12 @@
     <meta name="author" content="">
 
     <title>Silver@home - Doctor interface</title>
-
+	
     <!-- Bootstrap Core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="dist/css/metisMenu.min.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
     <link href="dist/css/timeline.css" rel="stylesheet">
@@ -24,10 +24,12 @@
     <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="dist/css/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="dist/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    
 	<script src="js/displayData.js"></script>
 </head>
 
@@ -137,13 +139,13 @@
                           <div class="table-responsive">
                                     <table id="added-patientData" class="table table-striped table-bordered table-hover">
 										<tr>
+											<th>Date of mesure</th>
 											<th>N</th>
 											<th>Id</th>
 											<th>Weight</th>
 											<th>Weight reference</th>
 											<th>systolicPressure</th>
 											<th>diastolicPressure</th>
-											<th>Date of mesure</th>
 											<th>Alert</th>
 										</tr>
 								   </table>

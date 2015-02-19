@@ -14,10 +14,10 @@
     <title>Silver@home - Doctor interface</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="dist/css/metisMenu.min.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
     <link href="dist/css/timeline.css" rel="stylesheet">
@@ -26,10 +26,10 @@
     <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="dist/css/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="dist/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -45,81 +45,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Doctor interface</a>
+                <a class="navbar-brand" href="index.jsp">Doctor interface</a>
             </div>
             <!-- /.navbar-header -->
-			
-			<ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>John Smith</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>Yesterday</em>
-                                    </span>
-                                </div>
-                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>Read All Messages</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -146,22 +74,6 @@
 
         <div id="page-wrapper">
             <div class="row">
-            <!--<div class="col-lg-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Silver@Home
-                        </div>
-                        <div class="panel-body">
-                            <p>
-                        		Le projet Silver@home propose d’étudier et de mettre en oeuvre une plate-forme digitale recueillant les données d’un patient de type sénior pour les transmettre de façon sécurisée aux personnels de santé. En effet, le patient se pèse et prend sa tension au moyen d’une balance et d’un tensiomètre connectés. Ces derniers transmettent leurs données par Bluetooth à un Raspberry ou à une box qui va adapter leurs formats et les envoyer aux serveurs d’AZNetwork. Une fois ces données récupérées, un traitement sera effectué et, en fonction des résultats, des alertes pourront être envoyées au médecin traitant. Ainsi, les médecins pourront établir un diagnostic à distance et suivre l’évolution de santé du patient depuis l'hôpital. Si une alerte est déclenchée, le médecin sera automatiquement mis au courant et aura la possibilité de contacter le patient.
-                        	</p>
-                        </div>
-                        <div class="panel-footer">
-                            <img  class="img-responsive" alt="silverSchema" src="http://nsm08.casimages.com/img/2015/02/17//15021704590919166812975951.png">
-                        </div>
-                    </div>
-                </div>
-                -->
                 <div class="col-lg-12">
                     <div class="jumbotron">
                         <h1>Silver@Home</h1>
@@ -169,7 +81,7 @@
                         	Le projet Silver@home propose d’étudier et de mettre en oeuvre une plate-forme digitale recueillant les données d’un patient de type sénior pour les transmettre de façon sécurisée aux personnels de santé. En effet, le patient se pèse et prend sa tension au moyen d’une balance et d’un tensiomètre connectés. Ces derniers transmettent leurs données par Bluetooth à un Raspberry ou à une box qui va adapter leurs formats et les envoyer aux serveurs d’AZNetwork. Une fois ces données récupérées, un traitement sera effectué et, en fonction des résultats, des alertes pourront être envoyées au médecin traitant. Ainsi, les médecins pourront établir un diagnostic à distance et suivre l’évolution de santé du patient depuis l'hôpital. Si une alerte est déclenchée, le médecin sera automatiquement mis au courant et aura la possibilité de contacter le patient.
                         </p>
                         <br/>
-                        <img  class="img-responsive" alt="silverSchema" src="http://nsm08.casimages.com/img/2015/02/17//15021704590919166812975951.png">
+                        <!--<img  class="img-responsive" alt="silverSchema" src="http://nsm08.casimages.com/img/2015/02/17//15021704590919166812975951.png">-->
                         <br/>
                     </div>
                 </div>

@@ -30,7 +30,7 @@ function sendAjax() {
 
 
 function retrieveData(){
-	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "", date : "", typeAlert : "" };
+	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "",  date : "",  typeAlert : "" };
 	$.ajax({
 		url: "jsonservlet",
 		type: 'GET',
@@ -43,13 +43,13 @@ function retrieveData(){
         	$("tr:has(td)").remove();
         	$.each(data, function (index, patientObject) {
                 $("#added-patientData").append($('<tr/>')
+                		.append($('<td/>').html(patientObject.date))
                 		.append($('<td/>').html(patientObject.patientNumber))
                 		.append($('<td/>').html(patientObject.patientID))
                 		.append($('<td/>').html(patientObject.patientWeight))
                 		.append($('<td/>').html(patientObject.perfectWeight))
                 		.append($('<td/>').html(patientObject.systolicPressure))
                 		.append($('<td/>').html(patientObject.diastolicPressure))
-                		.append($('<td/>').html(patientObject.date))
                 		.append($('<td/>').html(patientObject.typeAlert))
                 );  
             }); 
@@ -65,7 +65,7 @@ function retrieveData(){
 function getPatient(id)
 {
 	console.log("Name to search --> "+id);
-	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "", date : "", typeAlert : "" };
+	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "",  date : "", typeAlert : "" };
 	$.ajax({
 		url: "jsonservlet",
 		type: 'GET',
@@ -79,13 +79,13 @@ function getPatient(id)
         	$("tr:has(td)").remove();
         	$.each(data, function (index, patientObject) {
                 $("#search-patientData").append($('<tr/>')
+                		.append($('<td/>').html(patientObject.date))
                 		.append($('<td/>').html(patientObject.patientNumber))
                 		.append($('<td/>').html(patientObject.patientID))
                 		.append($('<td/>').html(patientObject.patientWeight))
                 		.append($('<td/>').html(patientObject.perfectWeight))
                 		.append($('<td/>').html(patientObject.systolicPressure))
                 		.append($('<td/>').html(patientObject.diastolicPressure))
-                		.append($('<td/>').html(patientObject.date))
                 		.append($('<td/>').html(patientObject.typeAlert))
                 );  
             }); 

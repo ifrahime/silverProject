@@ -40,6 +40,21 @@ public class PatientData implements Serializable{
 
 
 
+	public Date getDate() {
+		return date;
+	}
+
+
+
+
+
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+
+
 
 
 
@@ -105,36 +120,7 @@ public class PatientData implements Serializable{
 
 
 
-	public Date getDate() {
-		return date;
-	}
-
-
-
-
-
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-
-
-
-
-
-	public String getTypeAlert() {
-		return typeAlert;
-	}
-
-
-
-
-
-
-	public void setTypeAlert(String typeAlert) {
-		this.typeAlert = typeAlert;
-	}
+	
 
 
 	public double getSystolicPressure() {
@@ -157,6 +143,15 @@ public class PatientData implements Serializable{
 
 	public void setDiastolicPressure(double diastolicPressure) {
 		this.diastolicPressure = diastolicPressure;
+	}
+	
+	public String getTypeAlert() {
+		return typeAlert;
+	}
+
+
+	public void setTypeAlert(String typeAlert) {
+		this.typeAlert = typeAlert;
 	}
 	
 

@@ -28,7 +28,6 @@ function drawChart(id) {
         .done(function( data ) {
           // When the response to the AJAX request comes back render the chart with new data
         	  chart.setData(data);
-        	  console.log("Id patient : "+data.id);
         })
         .fail(function() {
           // If there is no communication between the server, show an error
