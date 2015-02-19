@@ -142,17 +142,17 @@
        
 	</div>
 	 <!-- jQuery -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="dist/js/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="dist/js/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="bower_components/raphael/raphael-min.js"></script>
-    <script src="bower_components/morrisjs/morris.min.js"></script>
+    <script src="dist/js/raphael-min.js"></script>
+    <script src="dist/js/morris.min.js"></script>
     <script src="js/weightChart.js"></script>
 
     <!-- Custom Theme JavaScript -->

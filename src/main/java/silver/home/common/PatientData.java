@@ -2,7 +2,7 @@ package silver.home.common;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
+
 
 public class PatientData implements Serializable{
 	
