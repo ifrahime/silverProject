@@ -105,7 +105,6 @@
 
     <!-- Morris Charts JavaScript -->
     <script src="dist/js/raphael-min.js"></script>
-    <script src="dist/js/morris.min.js"></script>
     
 
     <!-- Custom Theme JavaScript -->

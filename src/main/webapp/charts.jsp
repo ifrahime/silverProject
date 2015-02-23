@@ -23,13 +23,12 @@
     <!-- Custom CSS -->
     <link href="dist/css/sb-admin-2.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="dist/css/morris.css" rel="stylesheet">
-
+    <!-- AmCharts CSS -->
+	<link rel="stylesheet" href="dist/amcharts/style.css" type="text/css">
+	
     <!-- Custom Fonts -->
     <link href="dist/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
-	<script src="js/displayData.js"></script>
 </head>
 
 <body>
@@ -90,11 +89,10 @@
 	                        <div class="panel-body">
 		                        <form class="form-inline">
 								  <div class="form-group">
-								    <label for="patientID">ID</label>
+								    <label for="patientID">Enter the ID of a patient</label>
 								    <input type="text" id="patientID" name="patientID" class="form-control" placeholder="Search for this ID"> 
 								  </div>
-								  <button type="button" class="btn btn-primary btn-xs" onclick="getPatient(document.getElementById('patientID').value)">Search</button>
-								  <button type="button" class="btn btn-default btn-xs" onclick="drawChart(document.getElementById('patientID').value)">Chart</button>
+								  <button type="button" class="btn btn-default" onclick="getPatient(document.getElementById('patientID').value); drawChart(document.getElementById('patientID').value);">Find</button>
 								 </form>
 							    <br/>
 	                           	<div class="table-responsive">
@@ -119,13 +117,14 @@
 	                <!-- /.col-lg-12 -->
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
+                        <div id="weightChart" class="panel-heading">
                             weight chart
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                            <div class="flot-chart">
-                                <div id="myCharts"></div>
+                                <!--<div id="myCharts"></div>-->
+                            	<div id="chartdiv" style="width:100%; height:400px;"></div>
                             </div>
                         </div>
                         <!-- /.panel-body -->
@@ -151,13 +150,19 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="dist/js/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
+    <!-- AmCharts JavaScript -->
     <script src="dist/js/raphael-min.js"></script>
-    <script src="dist/js/morris.min.js"></script>
+    <script src="dist/amcharts/amcharts.js" type="text/javascript"></script> 
+	<script src="dist/amcharts/serial.js" type="text/javascript"></script> 
+	<script src="dist/amcharts/amstock.js" type="text/javascript"></script>
+	
+	<!-- Script to draw vital signal -->
     <script src="js/weightChart.js"></script>
-
+    
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
-	 
+    
+	 <!-- Script allows to retrieve data from database -->
+	<script src="js/displayData.js"></script>
 </body>
 </html>

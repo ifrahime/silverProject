@@ -13,7 +13,8 @@
 	
     <!-- Bootstrap Core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-
+	<link href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css">
+	
     <!-- MetisMenu CSS -->
     <link href="dist/css/metisMenu.min.css" rel="stylesheet">
 
@@ -28,9 +29,6 @@
 
     <!-- Custom Fonts -->
     <link href="dist/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
-    
-	<script src="js/displayData.js"></script>
 </head>
 
 <body>
@@ -119,8 +117,8 @@
 												<input class="form-control" id="dateOfMesure" name="dateOfMesure" type="text" placeholder="Date of taking the mesure...">
 											</div>
 											<p>
-												<button class="btn btn-primary btn-xs" type="button" onclick="sendAjax()">Add</button>
-												<button class="btn btn-info btn-xs" type="button" onclick="retrieveData()">patientData</button>
+												<button class="btn btn-primary" type="button" onclick="sendAjax()">Add</button>
+												<button class="btn btn-info" type="button" onclick="retrieveData()">patientData</button>
 											</p>   
                                 	</form>
 	                        </div>
@@ -165,6 +163,7 @@
 	
 	 <!-- jQuery -->
     <script src="dist/js/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="dist/js/bootstrap.min.js"></script>
@@ -174,6 +173,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="dist/js/sb-admin-2.js"></script>
+      
+	<script src="js/displayData.js"></script>
 	 
 </body>
 </html>

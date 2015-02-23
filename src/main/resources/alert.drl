@@ -13,7 +13,7 @@ rule "Yellow alert"
 		Alert $alert=new Alert();
 		$patient.setTypeAlert("YELLOW ALERT");
 		$email.send("guillaume.chauvin1@gmail.com", $patient.getTypeAlert(),"Patient"+$patient.getPatientID()+" - "+$patient.getDate()+" : "+$alert.getYellowAlert());
-		$email.send("mountassir.brahim@gmail.com", "","Veuillez contacter votre médecin");
+		$email.send("mountassir.brahim@gmail.com", $patient.getTypeAlert(),"Veuillez contacter votre médecin");
 end
 
 
@@ -25,7 +25,7 @@ rule "Orange alert"
 		Alert $alert=new Alert();
 		$patient.setTypeAlert("ORANGE ALERT");
 		$email.send("guillaume.chauvin1@gmail.com", $patient.getTypeAlert(),"Patient"+$patient.getPatientID()+" - "+$patient.getDate()+" : "+$alert.getOrangeAlert());
-		$email.send("mountassir.brahim@gmail.com", "","Consulter votre médecin dans les 24H qui suivent");
+		$email.send("mountassir.brahim@gmail.com", $patient.getTypeAlert(),"Consulter votre médecin dans les 24H qui suivent");
 end
 
 
@@ -38,7 +38,7 @@ rule "Red alert"
 		Alert $alert=new Alert();
 		$patient.setTypeAlert("RED ALERT");
 		$email.send("guillaume.chauvin1@gmail.com", $patient.getTypeAlert(),"Patient"+$patient.getPatientID()+" - "+$patient.getDate()+": "+$alert.getRedAlert());
-		$email.send("mountassir.brahim@gmail.com", "","Il faut que vous consultiez rapidement votre médecin");
+		$email.send("mountassir.brahim@gmail.com", $patient.getTypeAlert(),"Il faut que vous consultiez rapidement votre médecin");
 end
 
 

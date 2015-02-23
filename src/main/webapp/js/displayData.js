@@ -30,6 +30,7 @@ function sendAjax() {
 
 
 function retrieveData(){
+	
 	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "",  date : "",  typeAlert : "" };
 	$.ajax({
 		url: "jsonservlet",
@@ -64,6 +65,7 @@ function retrieveData(){
 
 function getPatient(id)
 {
+
 	console.log("Name to search --> "+id);
 	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "",  date : "", typeAlert : "" };
 	$.ajax({
