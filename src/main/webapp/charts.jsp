@@ -45,7 +45,20 @@
                 <a class="navbar-brand" href="index.html">Doctor interface</a>
             </div>
             <!-- /.navbar-header -->
-
+			 <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li class="divider"></li>
+                        <li><a href="logout.jsp"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -58,10 +71,6 @@
                         </li>
                         <li>
                             <a href="patientDetails.jsp"><i class="fa fa-edit fa-fw"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="login.jsp"><i class="fa fa-files-o fa-fw"></i>Login</a>
-                            <!-- /.nav-second-level -->
                         </li>
                     </ul>
                 </div>
@@ -151,7 +160,6 @@
     <script src="dist/js/metisMenu.min.js"></script>
 
     <!-- AmCharts JavaScript -->
-    <script src="dist/js/raphael-min.js"></script>
     <script src="dist/amcharts/amcharts.js" type="text/javascript"></script> 
 	<script src="dist/amcharts/serial.js" type="text/javascript"></script> 
 	<script src="dist/amcharts/amstock.js" type="text/javascript"></script>

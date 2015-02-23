@@ -13,7 +13,6 @@
 	
     <!-- Bootstrap Core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css">
 	
     <!-- MetisMenu CSS -->
     <link href="dist/css/metisMenu.min.css" rel="stylesheet">
@@ -23,9 +22,6 @@
 
     <!-- Custom CSS -->
     <link href="dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="dist/css/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="dist/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -45,7 +41,20 @@
                 <a class="navbar-brand" href="index.jsp">Doctor interface</a>
             </div>
             <!-- /.navbar-header -->
-
+			 <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li class="divider"></li>
+                        <li><a href="logout.jsp"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -58,10 +67,6 @@
                         </li>
                         <li>
                             <a href="patientDetails.jsp"><i class="fa fa-edit fa-fw"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="login.html"><i class="fa fa-files-o fa-fw"></i>Login</a>
-                            <!-- /.nav-second-level -->
                         </li>
                     </ul>
                 </div>
@@ -163,7 +168,6 @@
 	
 	 <!-- jQuery -->
     <script src="dist/js/jquery.min.js"></script>
-    <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="dist/js/bootstrap.min.js"></script>

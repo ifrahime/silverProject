@@ -10,7 +10,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -34,6 +36,7 @@ import org.hibernate.Session;
 
 import silver.home.common.PatientData;
 import silver.home.persistence.HibernateUtil;
+import silver.home.persistence.loginManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -43,6 +46,7 @@ import javax.ws.rs.POST;
 
 public class JSONServlet extends HttpServlet{
 
+	
 	// This will store all received data
     List<PatientData> data = new LinkedList<PatientData>();
  
@@ -165,4 +169,5 @@ public class JSONServlet extends HttpServlet{
         kbase.addKnowledgePackages(kbuilder.getKnowledgePackages());
         return kbase;
     }
+	
 }
