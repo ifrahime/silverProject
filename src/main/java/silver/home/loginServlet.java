@@ -37,12 +37,11 @@ public class loginServlet extends HttpServlet {
                 dispatcher = request.getRequestDispatcher("index.jsp");
                 dispatcher.forward(request,response);
 
-                response.sendRedirect("index.jsp");
+                //response.sendRedirect("index.jsp");
             } else {
                 //error login
                 response.sendRedirect("login.jsp");
                 dispatcher = request.getRequestDispatcher("login.jsp");
-                dispatcher.forward(request,response);
             }
 
         } finally {
