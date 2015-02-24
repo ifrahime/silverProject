@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="silver.home.common.PatientData" table="patientData" catalog="silverDB">
+     	 <id name="patientNumber" type="int">
+            <column name="numberOfPatient" length="11"/>
+         </id>
+     	<property name="patientID" type="int">
+            <column name="patientID" length="11" not-null="true"/>
+        </property>
+        <property name="patientWeight" type="double">
+            <column name="weight" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="perfectWeight" type="double">
+            <column name="weightReference" not-null="true" unique="false" />
+        </property>
+        <property name="systolicPressure" type="double">
+            <column name="systolicPressure" not-null="true" unique="false" />
+        </property>
+        <property name="diastolicPressure" type="double">
+            <column name="diastolicPressure" not-null="true" unique="false" />
+        </property>
+         <property name="date" type="date">
+            <column name="dateOfMesure" not-null="true" unique="false" />
+        </property>
+        <property name="typeAlert" type="string">
+            <column name="alertType" length="45" not-null="false" unique="false" />
+        </property>
+    </class>
+</hibernate-mapping>

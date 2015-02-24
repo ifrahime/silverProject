@@ -10,11 +10,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import silver.home.persistence.loginManager;
+import silver.home.persistence.LoginManager;
 
-public class loginServlet extends HttpServlet {
+/**
+ * @author mountassirbrahim
+ *
+ */
+public class LoginServlet extends HttpServlet {
 
-    /** 
+	
+
+	/** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
      * @param response servlet response
@@ -31,7 +37,7 @@ public class loginServlet extends HttpServlet {
             String email = request.getParameter("email");
             String pass = request.getParameter("password");
             System.out.println("Email : "+email+" ::: Pass : "+pass);
-            loginManager manager=new loginManager();
+            LoginManager manager=new LoginManager();
             if (manager.isValidLogin(email, pass)) {;
                 request.setAttribute("email", email);
                 dispatcher = request.getRequestDispatcher("index.jsp");

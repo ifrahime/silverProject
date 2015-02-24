@@ -36,7 +36,6 @@ import org.hibernate.Session;
 
 import silver.home.common.PatientData;
 import silver.home.persistence.HibernateUtil;
-import silver.home.persistence.loginManager;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -44,6 +43,10 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 
 
+/**
+ * @author mountassirbrahim
+ *
+ */
 public class JSONServlet extends HttpServlet{
 
 	
@@ -138,20 +141,20 @@ public class JSONServlet extends HttpServlet{
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response crunchifyREST(InputStream incomingData) {
-        StringBuilder crunchifyBuilder = new StringBuilder();
+        StringBuilder builder = new StringBuilder();
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(incomingData));
             String line = null;
             while ((line = in.readLine()) != null) {
-                crunchifyBuilder.append(line);
+            	builder.append(line);
             }
         } catch (Exception e) {
             System.out.println("Error Parsing: - ");
         }
-        System.out.println("Data Received: " + crunchifyBuilder.toString());
+        System.out.println("Data Received: " + builder.toString());
  
         // return HTTP response 200 in case of success
-        return Response.status(200).entity(crunchifyBuilder.toString()).build();
+        return Response.status(200).entity(builder.toString()).build();
     }
 
     

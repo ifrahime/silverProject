@@ -1,6 +1,13 @@
 package silver.home.common;
 
+
 import java.io.Serializable;
+
+/**
+ * @author mountassirbrahim
+ *
+ */
+
 
 public class Alert implements Serializable{
 	private String yellowAlert;

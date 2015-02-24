@@ -2,6 +2,10 @@ package silver.home.common;
 
 import java.io.Serializable;
 
+/**
+ * @author mountassirbrahim
+ *
+ */
 public class UserRegistration implements Serializable{
 
 	private int index;

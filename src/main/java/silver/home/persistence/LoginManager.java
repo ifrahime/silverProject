@@ -1,5 +1,6 @@
 package silver.home.persistence;
 
+
 import java.util.Iterator;
 
 import org.hibernate.Query;
@@ -10,14 +11,18 @@ import org.hibernate.cfg.Configuration;
 
 import silver.home.common.UserRegistration;
 
-public class loginManager {
+/**
+ * @author mountassirbrahim
+ *
+ */
+public class LoginManager {
 
     private Session session;
     private int count = 0;
 
     
     
-    public loginManager() {
+    public LoginManager() {
 	}
 
 

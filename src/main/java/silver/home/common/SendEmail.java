@@ -1,11 +1,17 @@
 package silver.home.common;
 
+
+
 import java.io.Serializable;
 import java.util.*;
 
 import javax.mail.*;
 import javax.mail.internet.*;
 
+/**
+ * @author mountassirbrahim
+ *
+ */
 public class SendEmail implements Serializable{
 
     private  String USER_NAME; // GMail user name (just the part before "@gmail.com")

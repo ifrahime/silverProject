@@ -4,6 +4,12 @@ import java.io.Serializable;
 import java.sql.Date;
 
 
+/**
+ * @author mountassirbrahim
+ *
+ */
+
+
 public class PatientData implements Serializable{
 	
 	private int patientNumber;

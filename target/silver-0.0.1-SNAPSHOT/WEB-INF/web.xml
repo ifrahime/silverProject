@@ -6,15 +6,23 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 id="WebApp_ID" version="3.0">
   <display-name>Java Servlet JSON</display-name>
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
   	<servlet-name>jsonservlet</servlet-name>            
   	<servlet-class>silver.home.JSONServlet</servlet-class>
+  </servlet>
+   <servlet>
+  	<servlet-name>loginservlet</servlet-name>            
+  	<servlet-class>silver.home.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>jsonservlet</servlet-name>
   	<url-pattern>/jsonservlet</url-pattern>
   </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>loginservlet</servlet-name>
+  	<url-pattern>/loginservlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
