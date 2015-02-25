@@ -1,4 +1,5 @@
 
+
 function sendAjax() {
 	// get inputs
 	var patientData = new Object();
@@ -8,7 +9,7 @@ function sendAjax() {
 	patientData.perfectWeight = $('#weightReference').val();
 	patientData.systolicPressure= $('#systolicPressure').val();
 	patientData.diastolicPressure= $('#diastolicPressure').val();
-	patientData.date = $('#dateOfMesure').val();
+	patientData.date = $('#dateOfMeasure').val();
 	
 	$.ajax({
 		url: "jsonservlet",
@@ -26,11 +27,13 @@ function sendAjax() {
 			alert("error: "+data+" status: "+status+" er:"+er);
 		}
 	});
+	setTimeout(function(){
+		   window.location.reload(1);
+		}, 1000);
 }
 
-
-function retrieveData(){
-	
+function retrieveData()
+{
 	var patientObject = {patientNumber : "", patientID : "", patientWeight : "", perfectWeight : "", systolicPressure : "", diastolicPressure : "",  date : "",  typeAlert : "" };
 	$.ajax({
 		url: "jsonservlet",
@@ -59,9 +62,8 @@ function retrieveData(){
 		error:function(data,status,er) {
 			alert("error: "+data+" status: "+status+" er:"+er);
 		}
-	});
+	});		
 }
-
 
 function getPatient(id)
 {

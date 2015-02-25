@@ -23,7 +23,7 @@
             <column name="diastolicPressure" not-null="true" unique="false" />
         </property>
          <property name="date" type="date">
-            <column name="dateOfMesure" not-null="true" unique="false" />
+            <column name="dateOfMeasure" not-null="true" unique="false" />
         </property>
         <property name="typeAlert" type="string">
             <column name="alertType" length="45" not-null="false" unique="false" />

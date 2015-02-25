@@ -107,7 +107,7 @@
 	                           	<div class="table-responsive">
 	                                    <table id="search-patientData" class="table table-striped table-bordered table-hover">
 											<tr>
-												<th>Date of mesure</th>
+												<th>Date of measure</th>
 												<th>N°</th>
 												<th>Id</th>
 												<th>Weight</th>

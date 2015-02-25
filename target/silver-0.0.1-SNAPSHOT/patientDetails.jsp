@@ -77,7 +77,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Patient details - edit data</h1>
+                    <h1 class="page-header">Patient details</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -119,7 +119,7 @@
 											<br/>
 											<div class="form-group input-group">
 												<span class="input-group-addon">DATE OF MESURE</span>
-												<input class="form-control" id="dateOfMesure" name="dateOfMesure" type="text" placeholder="Date of taking the mesure...">
+												<input class="form-control" id="dateOfMeasure" name="dateOfMeasure" type="text" placeholder="Date of taking the mesure...">
 											</div>
 											<p>
 												<button class="btn btn-primary" type="button" onclick="sendAjax()">Add</button>
@@ -142,7 +142,7 @@
                           <div class="table-responsive">
                                     <table id="added-patientData" class="table table-striped table-bordered table-hover">
 										<tr>
-											<th>Date of mesure</th>
+											<th>Date of measure</th>
 											<th>N</th>
 											<th>Id</th>
 											<th>Weight</th>
