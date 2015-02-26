@@ -5,6 +5,6 @@ Une plateforme dynamique permettant de receuillir les données du patient et d'e
 ![alt tag](http://i.imgur.com/AGjZO4Y.png)
 
 
-La plateforme est construite : 
-FRONTEND : HTML - JAVASCRIPT - CSS(Template BOOSTRAP)
-BACKEND : JAVA (Hibernate - Base de donnée MySQL)
+La plateforme est construite : <br />
+FRONTEND : HTML - JAVASCRIPT - CSS(Template BOOSTRAP)<br />
+BACKEND : JAVA (Hibernate - Base de donnée MySQL)<br />
