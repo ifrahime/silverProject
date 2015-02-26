@@ -10,5 +10,5 @@ FRONTEND : HTML - JAVASCRIPT - CSS(Template BOOSTRAP)<br />
 BACKEND : JAVA (Hibernate - Base de donnée MySQL)<br />
 
 Pour utiliser la plateforme il suffit juste de télécharger le fichier .war dans le dossier target/ puis le déployer à l'aide du tomcat manager. Voici un tutoriel : <br />
-[a link](http://www.vogella.com/tutorials/ApacheTomcat/article.html)
+[Tomcat tutorial](http://www.vogella.com/tutorials/ApacheTomcat/article.html)
 
