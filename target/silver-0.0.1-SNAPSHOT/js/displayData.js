@@ -1,4 +1,7 @@
-
+/*
+ * SendAjax() : allows to call POST service in the server and to put data into database
+ * Call doPost of the servlet : jsonservlet
+ * */
 
 function sendAjax() {
 	console.log("They call me");
@@ -30,6 +33,11 @@ function sendAjax() {
 	});
 	
 }
+
+/*
+ * This function retrive data from database using the method GET
+ * Call doGet function from the servlet : jsonservlet
+ * */
 
 function retrieveData()
 {
@@ -63,6 +71,11 @@ function retrieveData()
 		}
 	});		
 }
+
+/*
+ * Retrieve data of a specified id 
+ * 
+ * */
 
 function getPatient(id)
 {

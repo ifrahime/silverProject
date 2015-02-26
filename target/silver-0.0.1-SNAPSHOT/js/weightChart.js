@@ -1,5 +1,8 @@
 
 
+/*
+ * This function draw a chart from weight data of a specified patient using the library amChart
+ * */
 
 function drawChart(id) {
 	$("#chartdiv").html("");

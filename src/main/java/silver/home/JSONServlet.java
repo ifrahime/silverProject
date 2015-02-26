@@ -50,8 +50,10 @@ public class JSONServlet extends HttpServlet{
     List<PatientData> data = new LinkedList<PatientData>();
  
     /***************************************************
+     * 
      * URL: /jsonservlet
      * doPost(): receives JSON data, parse it, map it and send back as JSON
+     * 
      ****************************************************/
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
