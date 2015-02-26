@@ -15,6 +15,7 @@ import silver.home.common.UserRegistration;
  * @author mountassirbrahim
  *
  */
+
 public class LoginManager {
 
     private Session session;
@@ -26,7 +27,16 @@ public class LoginManager {
 	}
 
 
-
+    
+	/**
+	 * @param email
+	 * @param pass
+	 * @return
+	 * TODO : Testify if the user (email & pass) exist in UserRegistration database
+	 * boolean
+	 */
+    
+    
 	public boolean isValidLogin(String email, String pass) {
 		System.out.println("email : "+email+"§§§§ pass : "+pass);
         SessionFactory factory = new Configuration().configure().buildSessionFactory();

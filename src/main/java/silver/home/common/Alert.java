@@ -15,11 +15,23 @@ public class Alert implements Serializable{
 	private String OrangeAlert;
 	
 	
+	/**
+	 * @return
+	 * TODO : get the content of yellow alert
+	 * String
+	 */
+	
 	public String getYellowAlert() {
 		return yellowAlert;
 	}
 
 
+	/**
+	 * @param yellowAlert
+	 * TODO : set the content of yellow alert
+	 * void
+	 */
+	
 	public void setYellowAlert(String yellowAlert) {
 		this.yellowAlert = yellowAlert;
 	}
@@ -45,6 +57,10 @@ public class Alert implements Serializable{
 	}
 
 
+	/**
+	 * Constructor allows to initialize all content of alert
+	 */
+	
 	public Alert()
 	{
 		yellowAlert="Prise de poids de 1kg : Eventuel contact du patient";

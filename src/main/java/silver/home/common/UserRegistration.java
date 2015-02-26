@@ -14,6 +14,12 @@ public class UserRegistration implements Serializable{
 	
 	
 	
+	/**
+	 * @param index
+	 * @param email
+	 * @param password
+	 */
+	
 	public UserRegistration(int index, String email, String password
 			) {
 		super();

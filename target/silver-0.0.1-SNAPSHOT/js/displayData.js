@@ -1,6 +1,7 @@
 
 
 function sendAjax() {
+	console.log("They call me");
 	// get inputs
 	var patientData = new Object();
 	patientData.patientID = $('#id').val();
@@ -27,9 +28,7 @@ function sendAjax() {
 			alert("error: "+data+" status: "+status+" er:"+er);
 		}
 	});
-	setTimeout(function(){
-		   window.location.reload(1);
-		}, 1000);
+	
 }
 
 function retrieveData()

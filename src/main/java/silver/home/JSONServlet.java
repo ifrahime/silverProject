@@ -1,52 +1,48 @@
 package silver.home;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
-import java.io.PrintWriter;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
-import org.drools.builder.KnowledgeBuilder;
-import org.drools.builder.KnowledgeBuilderError;
-import org.drools.builder.KnowledgeBuilderErrors;
-import org.drools.builder.KnowledgeBuilderFactory;
-import org.drools.builder.ResourceType;
+import org.drools.builder.*;
 import org.drools.io.ResourceFactory;
 import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.hibernate.Query;
 import org.hibernate.Session;
-
 import silver.home.common.PatientData;
 import silver.home.persistence.HibernateUtil;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 
 /**
  * @author mountassirbrahim
  *
  */
+
+
+/*
+ * Servlet permettant de communiquer avec le Raspberry et la base de données
+ * 
+ * */
+
+
+
 public class JSONServlet extends HttpServlet{
 
 	
@@ -57,6 +53,7 @@ public class JSONServlet extends HttpServlet{
      * URL: /jsonservlet
      * doPost(): receives JSON data, parse it, map it and send back as JSON
      ****************************************************/
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
     	
@@ -105,6 +102,8 @@ public class JSONServlet extends HttpServlet{
     }
    
     
+    
+    
     @Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {       
@@ -137,7 +136,12 @@ public class JSONServlet extends HttpServlet{
          session.close();	  
 	}
 
-
+    /*
+     * Function allows to communicate with Raspberry using REST service
+     * 
+     * */
+    
+    
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response crunchifyREST(InputStream incomingData) {
@@ -157,6 +161,11 @@ public class JSONServlet extends HttpServlet{
         return Response.status(200).entity(builder.toString()).build();
     }
 
+    
+    /*
+     * readKnowledgeBase is a function that load DROOLS rules from resources
+     * 
+     * */
     
 	private static KnowledgeBase readKnowledgeBase() throws Exception {
         KnowledgeBuilder kbuilder = KnowledgeBuilderFactory.newKnowledgeBuilder();

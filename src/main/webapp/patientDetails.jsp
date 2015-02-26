@@ -123,7 +123,7 @@
 											</div>
 											<p>
 												<button class="btn btn-primary" type="button" onclick="sendAjax()">Add</button>
-												<button class="btn btn-info" type="button" onclick="retrieveData()">patientData</button>
+												<button id ="showPatientData" class="btn btn-info" type="button" onclick="retrieveData()">patientData</button>
 											</p>   
                                 	</form>
 	                        </div>

@@ -50,6 +50,14 @@ public class SendEmail implements Serializable{
         sendFromGMail(to, subject, body);
     }
 
+    /**
+     * @param to
+     * @param subject
+     * @param body
+     * TODO : Send an email to different account
+     * void
+     */
+    
     public void sendFromGMail(String[] to, String subject, String body) {
         Properties props = System.getProperties();
         String host = "smtp.gmail.com";

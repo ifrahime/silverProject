@@ -29,6 +29,17 @@ public class PatientData implements Serializable{
 	}
 	
 
+	/**
+	 * @param patientNumber
+	 * @param patientID
+	 * @param patientWeight
+	 * @param perfectWeight
+	 * @param systolicPressure
+	 * @param diastolicPressure
+	 * @param date
+	 * @param typeAlert
+	 */
+	
 	public PatientData(int patientNumber, int patientID, double patientWeight,
 			double perfectWeight, double systolicPressure,
 			double diastolicPressure, Date date, String typeAlert) {
@@ -46,6 +57,12 @@ public class PatientData implements Serializable{
 
 
 
+	/**
+	 * @return
+	 * TODO : return date of measure
+	 * Date
+	 */
+	
 	public Date getDate() {
 		return date;
 	}
