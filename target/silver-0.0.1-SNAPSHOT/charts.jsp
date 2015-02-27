@@ -112,8 +112,8 @@
 												<th>Id</th>
 												<th>Weight</th>
 												<th>Weight reference</th>
-												<th>systolicPressure</th>
-												<th>diastolicPressure</th>
+												<th>SystolicPressure</th>
+												<th>DiastolicPressure</th>
 												<th>Alert</th>
 											</tr>
 									   </table>

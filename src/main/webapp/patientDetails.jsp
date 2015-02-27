@@ -142,13 +142,13 @@
                           <div class="table-responsive">
                                     <table id="added-patientData" class="table table-striped table-bordered table-hover">
 										<tr>
-											<th>date of measure</th>
-											<th>n°</th>
-											<th>id</th>
-											<th>weight</th>
-											<th>weight reference</th>
-											<th>systolicPressure</th>
-											<th>diastolicPressure</th>
+											<th>Date of measure</th>
+											<th>N°</th>
+											<th>Id</th>
+											<th>Weight</th>
+											<th>Weight reference</th>
+											<th>SystolicPressure</th>
+											<th>DiastolicPressure</th>
 											<th>Alert</th>
 										</tr>
 								   </table>
