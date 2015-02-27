@@ -92,38 +92,38 @@
 	                        <div class="panel-body">
 	                           	<form role="form">
 									     <div class="form-group input-group">
-												<span class="input-group-addon">ID</span>
+												<span class="input-group-addon">Id</span>
 												<input class="form-control" id="id" name="id" type="text" placeholder="patient medical_id...">
 											</div>
 										
 											<br/>
 											<div class="form-group input-group">
-												<span class="input-group-addon">WEIGHT</span>
+												<span class="input-group-addon">Weight</span>
 												<input class="form-control" id="weight" name="weight" type="text" placeholder="weight of patient..">
 											</div>
 											<br/>
 											<div class="form-group input-group">
-												<span class="input-group-addon">WEIGHT REFERENCE</span>
+												<span class="input-group-addon">Weight reference</span>
 												<input class="form-control" id="weightReference" name="weightReference" type="text" placeholder="weight specified by doctor for the patient...">
 											</div>
 											<br/>
 											<div class="form-group input-group">
-												<span class="input-group-addon">systolic Pressure</span>
+												<span class="input-group-addon">Systolic Pressure</span>
 												<input class="form-control" id="systolicPressure" name="systolicPressure" type="text" placeholder="Tension of patient...">
 											</div>
 											<br/>
 											<div class="form-group input-group">
-												<span class="input-group-addon">diastolic Pressure</span>
+												<span class="input-group-addon">Diastolic Pressure</span>
 												<input class="form-control" id="diastolicPressure" name="diastolicPressure" type="text" placeholder="Tension of patient...">
 											</div>
 											<br/>
 											<div class="form-group input-group">
-												<span class="input-group-addon">DATE OF MESURE</span>
+												<span class="input-group-addon">Date of measure</span>
 												<input class="form-control" id="dateOfMeasure" name="dateOfMeasure" type="text" placeholder="Date of taking the mesure...">
 											</div>
 											<p>
 												<button class="btn btn-primary" type="button" onclick="sendAjax()">Add</button>
-												<button id ="showPatientData" class="btn btn-info" type="button" onclick="retrieveData()">patientData</button>
+												<button id ="showPatientData" class="btn btn-info" type="button" onclick="retrieveData()">show all patients</button>
 											</p>   
                                 	</form>
 	                        </div>
@@ -142,11 +142,11 @@
                           <div class="table-responsive">
                                     <table id="added-patientData" class="table table-striped table-bordered table-hover">
 										<tr>
-											<th>Date of measure</th>
-											<th>N</th>
-											<th>Id</th>
-											<th>Weight</th>
-											<th>Weight reference</th>
+											<th>date of measure</th>
+											<th>n°</th>
+											<th>id</th>
+											<th>weight</th>
+											<th>weight reference</th>
 											<th>systolicPressure</th>
 											<th>diastolicPressure</th>
 											<th>Alert</th>
