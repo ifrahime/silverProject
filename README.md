@@ -3,7 +3,7 @@ Une plateforme dynamique permettant de receuillir les données du patient et d'e
 
 La plateforme est construite : <br />
 FRONTEND : HTML - JAVASCRIPT - CSS(Template BOOSTRAP)<br />
-BACKEND : JAVA (Hibernate - Base de donnée MySQL)<br />
+BACKEND : JAVA (Hibernate - SQL)<br />
 
 Pour utiliser la plateforme il suffit juste de télécharger le fichier .war dans le dossier target/ puis le déployer à l'aide du tomcat manager. <br />
 [Tomcat tutorial](http://www.vogella.com/tutorials/ApacheTomcat/article.html)<br />
